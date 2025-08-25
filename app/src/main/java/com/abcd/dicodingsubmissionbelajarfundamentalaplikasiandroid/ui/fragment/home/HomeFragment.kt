@@ -1,5 +1,6 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.Upco
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.FragmentHomeBinding
+import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.search_events.SearchEventsActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.UIState
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -46,8 +48,17 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setButton()
         getResponseActiveEvents()
         getResponseEventsFinished()
+    }
+
+    private fun setButton() {
+        binding.apply {
+            tvSrcData.setOnClickListener {
+                startActivity(Intent(requireActivity(), SearchEventsActivity::class.java))
+            }
+        }
     }
 
     private fun getResponseActiveEvents(){
