@@ -19,4 +19,8 @@
     <color name="textSnowDrift">#F8FBF8</color>
     <color name="textColorWhite">#FAF5EF</color>
     <color name="textColorBlack">#1A1A1A</color>
+
+    <color name="backgroundTransparent">#B3000000</color>
+    <color name="textJudulTransparent">#FFFFFF</color>
+    <color name="textPenulisTransparent">#DCDCDC</color>
 </resources>

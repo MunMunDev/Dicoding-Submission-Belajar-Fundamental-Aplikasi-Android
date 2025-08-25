@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.EventsFinishedAdapter
+import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.UpcomingEventsAdapter
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.FragmentHomeBinding
@@ -20,12 +21,17 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
+    private lateinit var eventUpcomingAdapter : UpcomingEventsAdapter
     private lateinit var eventFinishedAdapter : EventsFinishedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.fetchActiveEvents(1, "")
-        viewModel.fetchEventsFinished(0, "")
+        if (viewModel.getResponseActiveEvents.value == null) {
+            viewModel.fetchActiveEvents(1, "")
+        }
+        if (viewModel.getResponseEventsFinished.value == null) {
+            viewModel.fetchEventsFinished(0, "")
+        }
     }
 
     override fun onCreateView(
@@ -57,7 +63,7 @@ class HomeFragment : Fragment() {
     private fun getResponseSuccessActiveEvents(data: ResponseModel) {
         if(data.error == false){
             data.listEvents?.let {
-                setAdapterEventsFinished(it)
+                setAdapterActiveEvents(it)
             }
         } else{
             Toast.makeText(requireContext(), data.message, Toast.LENGTH_SHORT).show()
@@ -68,8 +74,14 @@ class HomeFragment : Fragment() {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun setAdapterActiveEvents(listEvents: List<ListEventsModel>?) {
-
+    private fun setAdapterActiveEvents(listEvents: List<ListEventsModel>) {
+        binding.apply {
+            eventUpcomingAdapter = UpcomingEventsAdapter(listEvents, true)
+            rvUpcomingEvents.apply {
+                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                adapter = eventUpcomingAdapter
+            }
+        }
     }
 
     private fun getResponseEventsFinished(){
