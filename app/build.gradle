@@ -75,6 +75,9 @@ dependencies {
 
     // Shimmer
     implementation libs.shimmer
+
+    // Glide
+    implementation libs.glide
 }
 
 kapt {
