@@ -51,7 +51,20 @@
     </style>
 
     <!-- Abu abu -->
+    <style name="TextNormal.TextNormal.TextGrey" parent="TextNormal.TextNormal">
+        <item name="android:textColor">@color/abuabu_tua</item>
+    </style>
     <style name="TextNormal.TextSmall.TextGrey" parent="TextNormal.TextSmall">
         <item name="android:textColor">@color/abuabu_tua</item>
     </style>
+
+    <!-- Shimmer -->
+    <style name="TextNormal.TextNormal.TextShimmer" parent="TextNormal.TextNormal">
+        <item name="android:textColor">@color/abuabu_muda</item>
+    </style>
+    <style name="TextNormal.TextSmall.TextShimmer" parent="TextNormal.TextSmall">
+        <item name="android:textColor">@color/abuabu_muda</item>
+    </style>
+
+
 </resources>
