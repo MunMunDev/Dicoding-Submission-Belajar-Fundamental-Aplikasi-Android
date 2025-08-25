@@ -4,13 +4,13 @@ import com.google.gson.annotations.SerializedName
 
 data class ResponseModel(
     @SerializedName("error")
-    var error: String? = null,
+    var error: Boolean? = null,
 
     @SerializedName("message")
     var message: String? = null,
 
     @SerializedName("listEvents")
-    var listEvents: ArrayList<ListEventsModel>? = null,
+    var listEvents: List<ListEventsModel>? = null,
 )
 
 data class ListEventsModel (
