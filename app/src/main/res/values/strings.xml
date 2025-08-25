@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_upcoming">Upcoming</string>
     <string name="title_finished">Finished</string>
+    <string name="image">Image</string>
+    <string name="title">Contoh Title</string>
+    <string name="description">Contoh Deskripsi Yang Panjang dan Bisa Digunakan 2 lines</string>
+    <string name="category">Category</string>
+    <string name="date_time">13 Des 2024 - 13:00</string>
+    <string name="dicoding_event">Dicoding Event</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="finished_events">Finished Events</string>
 </resources>
