@@ -37,8 +37,8 @@ data class ListEventsModel (
     @SerializedName("category")
     var category: String? = null,
 
-    @SerializedName("owerName")
-    var owerName: String? = null,
+    @SerializedName("ownerName")
+    var ownerName: String? = null,
 
     @SerializedName("cityName")
     var cityName: String? = null,
@@ -74,8 +74,7 @@ data class ListEventsModel (
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
@@ -85,7 +84,7 @@ data class ListEventsModel (
         parcel.writeString(imageLogo)
         parcel.writeString(mediCover)
         parcel.writeString(category)
-        parcel.writeString(owerName)
+        parcel.writeString(ownerName)
         parcel.writeString(cityName)
         parcel.writeString(quota)
         parcel.writeString(registrants)

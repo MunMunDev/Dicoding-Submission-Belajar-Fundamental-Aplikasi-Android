@@ -54,4 +54,13 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="nama_event">Nama Event</string>
+    <string name="penyelenggara">Penyelenggara :</string>
+    <string name="kuota">Kuota :</string>
+    <string name="pendaftaran">Pendaftaran :</string>
+    <string name="pelaksanaan">Pelaksanaan :</string>
+    <string name="lokasi">Lokasi :</string>
+    <string name="kategori">Kategori :</string>
+    <string name="deskripsi_event">Deskripsi Event</string>
+    <string name="register">Register</string>
 </resources>
