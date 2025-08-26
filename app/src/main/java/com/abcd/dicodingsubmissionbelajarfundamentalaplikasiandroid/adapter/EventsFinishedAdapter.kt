@@ -1,11 +1,13 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.R
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.ItemListFinishedEventsBinding
+import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.detail_event.DetailEventActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.DateAndTime
 import com.bumptech.glide.Glide
 
@@ -42,6 +44,13 @@ class EventsFinishedAdapter(
                 .load(data.imageLogo) // URL Gambar
                 .error(R.drawable.image_error)
                 .into(ivImageEvent) // imageView mana yang akan diterapkan
+        }
+        holder.itemView.setOnClickListener {
+            val i = Intent(
+                holder.itemView.context.applicationContext, DetailEventActivity::class.java
+            )
+            i.putExtra("list_event", data)
+            holder.itemView.context.startActivity(i)
         }
     }
 

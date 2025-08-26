@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid">
         <activity
+            android:name=".ui.activity.detail_event.DetailEventActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.search_events.SearchEventsActivity"
             android:exported="false" />
         <activity

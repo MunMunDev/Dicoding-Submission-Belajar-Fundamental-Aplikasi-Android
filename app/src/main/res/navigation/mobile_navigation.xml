@@ -20,9 +20,9 @@
 
     <fragment
         android:id="@+id/navigation_upcoming"
-        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.dashboard.DashboardFragment"
+        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.dashboard.UpcomingFragment"
         android:label="@string/title_upcoming"
-        tools:layout="@layout/fragment_dashboard" >
+        tools:layout="@layout/fragment_finished" >
         <action
             android:id="@+id/action_navigation_dashboard_to_navigation_home"
             app:destination="@id/navigation_home" />
@@ -33,9 +33,9 @@
 
     <fragment
         android:id="@+id/navigation_finished"
-        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.notifications.NotificationsFragment"
+        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.notifications.FinishedFragment"
         android:label="@string/title_finished"
-        tools:layout="@layout/fragment_notifications" >
+        tools:layout="@layout/fragment_upcoming" >
         <action
             android:id="@+id/action_navigation_notifications_to_navigation_home"
             app:destination="@id/navigation_home" />

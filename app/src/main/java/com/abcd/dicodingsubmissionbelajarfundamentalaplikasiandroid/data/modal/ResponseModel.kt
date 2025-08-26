@@ -1,5 +1,7 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class ResponseModel(
@@ -56,4 +58,53 @@ data class ListEventsModel (
     @SerializedName("link")
     var link: String? = null,
 
-)
+): Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
+        parcel.writeString(name)
+        parcel.writeString(summary)
+        parcel.writeString(description)
+        parcel.writeString(imageLogo)
+        parcel.writeString(mediCover)
+        parcel.writeString(category)
+        parcel.writeString(owerName)
+        parcel.writeString(cityName)
+        parcel.writeString(quota)
+        parcel.writeString(registrants)
+        parcel.writeString(beginTime)
+        parcel.writeString(endTime)
+        parcel.writeString(link)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<ListEventsModel> {
+        override fun createFromParcel(parcel: Parcel): ListEventsModel {
+            return ListEventsModel(parcel)
+        }
+
+        override fun newArray(size: Int): Array<ListEventsModel?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

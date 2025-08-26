@@ -18,34 +18,43 @@
         <item name="android:textColorPrimary">@color/textColorBlack</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="TextNormal">
         <item name="android:textColor">@color/textColorBlack</item>
         <item name="android:textStyle">normal</item>
         <item name="android:lineSpacingExtra">4dp</item>
     </style>
+
     <style name="TextBold">
         <item name="android:textColor">@color/textColorBlack</item>
         <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">4dp</item>
     </style>
+
     <style name="TextNormal.TextVerySmall" parent="TextNormal">
         <item name="android:textSize">10sp</item>
     </style>
+
     <style name="TextNormal.TextSmall" parent="TextNormal">
         <item name="android:textSize">12sp</item>
     </style>
+
     <style name="TextNormal.TextNormal" parent="TextNormal">
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="TextNormal.TextHeader" parent="TextNormal">
         <item name="android:textSize">24sp</item>
     </style>
+
     <style name="TextBold.TextNormal" parent="TextBold">
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="TextBold.TextTitle" parent="TextBold">
         <item name="android:textSize">16sp</item>
     </style>
+
     <style name="TextBold.TextHeader" parent="TextBold">
         <item name="android:textSize">18sp</item>
     </style>
@@ -54,6 +63,7 @@
     <style name="TextNormal.TextNormal.TextGrey" parent="TextNormal.TextNormal">
         <item name="android:textColor">@color/abuabu_tua</item>
     </style>
+
     <style name="TextNormal.TextSmall.TextGrey" parent="TextNormal.TextSmall">
         <item name="android:textColor">@color/abuabu_tua</item>
     </style>
@@ -62,8 +72,14 @@
     <style name="TextNormal.TextNormal.TextShimmer" parent="TextNormal.TextNormal">
         <item name="android:textColor">@color/abuabu_muda</item>
     </style>
+
     <style name="TextNormal.TextSmall.TextShimmer" parent="TextNormal.TextSmall">
         <item name="android:textColor">@color/abuabu_muda</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
 
