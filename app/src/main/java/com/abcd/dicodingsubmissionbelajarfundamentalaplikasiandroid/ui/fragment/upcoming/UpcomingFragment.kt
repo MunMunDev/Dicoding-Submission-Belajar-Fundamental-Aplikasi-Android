@@ -14,8 +14,10 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.Even
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.FragmentUpcomingBinding
+import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.CheckNetwork
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.UIState
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class UpcomingFragment : Fragment() {
@@ -23,10 +25,16 @@ class UpcomingFragment : Fragment() {
     private lateinit var binding: FragmentUpcomingBinding
     private val viewModel: UpcomingViewModel by viewModels()
     private lateinit var eventFinishedAdapter : EventsFinishedAdapter
+    @Inject lateinit var checkNetwork: CheckNetwork
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.fetchUpcomingEvents(1, "")
+    override fun onResume() {
+        super.onResume()
+        if(checkNetwork.isNetworkAvailable()){
+            viewModel.fetchUpcomingEvents(1, "")
+        } else{
+            Toast.makeText(requireContext(), "Tolong Aktifkan Jaringan Anda", Toast.LENGTH_SHORT).show()
+            setStopShimmerUpcomingEvents()
+        }
     }
 
     override fun onCreateView(
@@ -91,10 +99,9 @@ class UpcomingFragment : Fragment() {
 
     private fun setAdapterUpcomingEvents(listEvents: List<ListEventsModel>) {
         binding.apply {
-            Toast.makeText(requireContext(), listEvents.size, Toast.LENGTH_SHORT).show()
             eventFinishedAdapter = EventsFinishedAdapter(listEvents, false)
             rvUpcomingEvents.apply {
-                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 adapter = eventFinishedAdapter
             }
             setSearchBerita()
@@ -118,4 +125,5 @@ class UpcomingFragment : Fragment() {
             rvUpcomingEvents.visibility = View.VISIBLE
         }
     }
+
 }

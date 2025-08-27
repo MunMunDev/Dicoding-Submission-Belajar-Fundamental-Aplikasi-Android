@@ -22,7 +22,7 @@
         android:id="@+id/navigation_upcoming"
         android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.upcoming.UpcomingFragment"
         android:label="@string/title_upcoming"
-        tools:layout="@layout/fragment_finished" >
+        tools:layout="@layout/fragment_upcoming" >
         <action
             android:id="@+id/action_navigation_dashboard_to_navigation_home"
             app:destination="@id/navigation_home" />
@@ -35,7 +35,7 @@
         android:id="@+id/navigation_finished"
         android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.notifications.FinishedFragment"
         android:label="@string/title_finished"
-        tools:layout="@layout/fragment_upcoming" >
+        tools:layout="@layout/fragment_finished" >
         <action
             android:id="@+id/action_navigation_notifications_to_navigation_home"
             app:destination="@id/navigation_home" />

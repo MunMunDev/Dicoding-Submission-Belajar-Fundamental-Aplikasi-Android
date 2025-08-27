@@ -4,9 +4,14 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class CheckNetwork {
-    fun isNetworkAvailable(context: Context?): Boolean {
+@Suppress("DEPRECATION")
+class CheckNetwork @Inject constructor(
+    @ApplicationContext val context: Context?
+) {
+    fun isNetworkAvailable(): Boolean {
         if (context == null) return false
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
