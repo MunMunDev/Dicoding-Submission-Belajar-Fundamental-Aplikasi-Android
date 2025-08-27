@@ -54,7 +54,7 @@ class FinishedFragment : Fragment() {
         getResponseFinishedEvents()
     }
 
-    private fun setSearchBerita() {
+    private fun setSearchEvents() {
         binding.topAppBar.etSearch.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -104,7 +104,7 @@ class FinishedFragment : Fragment() {
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 adapter = eventFinishedAdapter
             }
-            setSearchBerita()
+            setSearchEvents()
         }
     }
 
