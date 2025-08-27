@@ -3,6 +3,7 @@ package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.R
@@ -79,6 +80,9 @@ class DetailEventActivity : AppCompatActivity() {
                     tvPelaksanaan.text = tglMulaiPelaksanaan
                     tvLokasi.text = cityNameEvent
                     tvKategori.text = categoryEvent
+                    
+                    val tempDescription = Html.fromHtml(descriptionEvent)
+                    tvDeskripsi.text = tempDescription
 
                     Glide.with(this@DetailEventActivity)
                         .load(imageLogo) // URL Gambar
