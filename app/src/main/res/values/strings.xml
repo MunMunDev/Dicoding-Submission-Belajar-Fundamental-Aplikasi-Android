@@ -12,6 +12,8 @@
     <string name="upcoming_events">Upcoming Events</string>
     <string name="finished_events">Finished Events</string>
     <string name="cari_events">Cari Events</string>
+    <string name="events">Events</string>
+    <string name="search">Cari Judul, Ataupun Penyelenggara</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
