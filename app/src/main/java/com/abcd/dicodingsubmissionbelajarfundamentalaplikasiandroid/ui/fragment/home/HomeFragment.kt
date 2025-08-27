@@ -15,8 +15,10 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.L
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.FragmentHomeBinding
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.search_events.SearchEventsActivity
+import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.CheckNetwork
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.UIState
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -25,15 +27,25 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private lateinit var eventUpcomingAdapter : UpcomingEventsAdapter
     private lateinit var eventFinishedAdapter : EventsFinishedAdapter
+    @Inject
+    lateinit var checkNetwork: CheckNetwork
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (viewModel.getResponseActiveEvents.value == null) {
-            viewModel.fetchActiveEvents(1, "")
+        if (savedInstanceState == null) {
+            if(checkNetwork.isNetworkAvailable()){
+                viewModel.fetchActiveEvents(1, "")
+                viewModel.fetchEventsFinished(0, "")
+            } else{
+                Toast.makeText(requireContext(), "Tolong Aktifkan Jaringan Anda", Toast.LENGTH_SHORT).show()
+            }
         }
-        if (viewModel.getResponseEventsFinished.value == null) {
-            viewModel.fetchEventsFinished(0, "")
-        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.fetchActiveEvents(1, "")
+        viewModel.fetchEventsFinished(0, "")
     }
 
     override fun onCreateView(
@@ -64,7 +76,7 @@ class HomeFragment : Fragment() {
     private fun getResponseActiveEvents(){
         viewModel.getResponseActiveEvents.observe(viewLifecycleOwner){result->
             when(result){
-                is UIState.Loading-> {}
+                is UIState.Loading-> setStartShimmerUpcomingEvents()
                 is UIState.Success-> getResponseSuccessActiveEvents(result.data)
                 is UIState.Failure-> getResponseFailureActiveEvents(result.message)
             }
@@ -79,10 +91,12 @@ class HomeFragment : Fragment() {
         } else{
             Toast.makeText(requireContext(), data.message, Toast.LENGTH_SHORT).show()
         }
+        setStopShimmerUpcomingEvents()
     }
 
     private fun getResponseFailureActiveEvents(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        setStopShimmerUpcomingEvents()
     }
 
     private fun setAdapterActiveEvents(listEvents: List<ListEventsModel>) {
@@ -128,6 +142,24 @@ class HomeFragment : Fragment() {
                 layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 adapter = eventFinishedAdapter
             }
+        }
+    }
+
+    private fun setStartShimmerUpcomingEvents(){
+        binding.apply {
+            smUpcomingEvents.startShimmer()
+            smUpcomingEvents.visibility = View.VISIBLE
+
+            rvUpcomingEvents.visibility = View.GONE
+        }
+    }
+
+    private fun setStopShimmerUpcomingEvents(){
+        binding.apply {
+            smUpcomingEvents.stopShimmer()
+            smUpcomingEvents.visibility = View.GONE
+
+            rvUpcomingEvents.visibility = View.VISIBLE
         }
     }
 
