@@ -33,6 +33,7 @@ class UpcomingFragment : Fragment() {
             viewModel.fetchUpcomingEvents(1, "")
         } else{
             Toast.makeText(requireContext(), "Tolong Aktifkan Jaringan Anda", Toast.LENGTH_SHORT).show()
+            setStopShimmerUpcomingEvents()
         }
     }
 
