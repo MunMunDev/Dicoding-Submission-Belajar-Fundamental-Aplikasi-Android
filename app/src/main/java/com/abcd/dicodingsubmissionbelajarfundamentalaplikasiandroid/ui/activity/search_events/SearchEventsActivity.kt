@@ -1,17 +1,11 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.search_events
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.R
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.EventsFinishedAdapter
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
@@ -37,7 +31,7 @@ class SearchEventsActivity : AppCompatActivity() {
             searchView.setupWithSearchBar(searchBar)
             searchView
                 .editText
-                .setOnEditorActionListener { textView, actionId, event ->
+                .setOnEditorActionListener { _, _, _ ->
                     searchBar.setText(searchView.text)
                     searchView.hide()
                     viewModel.fetchEvents(-1, searchView.text.toString())
