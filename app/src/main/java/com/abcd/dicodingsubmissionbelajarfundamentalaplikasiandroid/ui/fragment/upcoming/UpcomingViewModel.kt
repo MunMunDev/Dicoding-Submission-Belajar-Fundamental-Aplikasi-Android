@@ -33,12 +33,6 @@ class UpcomingViewModel @Inject constructor(
         }
     }
 
-    fun resetResponseUpcoming(){
-        viewModelScope.launch {
-            _upcomingEvents.value = null
-        }
-    }
-
 }
 
 

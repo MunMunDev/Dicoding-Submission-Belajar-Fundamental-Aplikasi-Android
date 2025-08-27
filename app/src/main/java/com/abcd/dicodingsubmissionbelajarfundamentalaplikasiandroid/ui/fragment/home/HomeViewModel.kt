@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.database.api.ApiService
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.repository.ListEventsRepository
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.UIState
