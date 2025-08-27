@@ -15,7 +15,7 @@ import javax.inject.Inject
 class UpcomingViewModel @Inject constructor(
     private val repository: ListEventsRepository
 ) : ViewModel() {
-    private val _upcomingEvents = MutableLiveData<UIState<ResponseModel>>()
+    private val _upcomingEvents: MutableLiveData<UIState<ResponseModel>> = MutableLiveData<UIState<ResponseModel>>()
     val getResponseUpcomingEvents: LiveData<UIState<ResponseModel>> = _upcomingEvents
 
     fun fetchUpcomingEvents(
@@ -30,6 +30,12 @@ class UpcomingViewModel @Inject constructor(
             } catch (ex: Exception) {
                 _upcomingEvents.value = UIState.Failure("Error: ${ex.message}")
             }
+        }
+    }
+
+    fun resetResponseUpcoming(){
+        viewModelScope.launch {
+            _upcomingEvents.value = null
         }
     }
 

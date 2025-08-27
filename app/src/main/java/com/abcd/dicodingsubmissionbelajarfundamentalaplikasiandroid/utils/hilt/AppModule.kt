@@ -2,7 +2,6 @@ package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.hilt
 
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.database.api.ApiService
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.Constant
-import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.CheckNetwork
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -31,9 +30,4 @@ object AppModule {
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .build()
         .create(ApiService::class.java)
-
-    @Provides
-    @Singleton
-    fun checkNetwork(): CheckNetwork = CheckNetwork()
-
 }
