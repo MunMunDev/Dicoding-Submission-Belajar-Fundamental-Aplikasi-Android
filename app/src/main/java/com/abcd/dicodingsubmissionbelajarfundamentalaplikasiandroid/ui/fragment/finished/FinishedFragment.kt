@@ -1,6 +1,5 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.finished
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -15,7 +14,6 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter.Even
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ResponseModel
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.FragmentFinishedBinding
-import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.search_events.SearchEventsActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.CheckNetwork
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.network.UIState
 import dagger.hilt.android.AndroidEntryPoint
