@@ -62,7 +62,11 @@ class EventsFinishedAdapter(
             Glide.with(holder.itemView)
                 .load(data.imageLogo) // URL Gambar
                 .error(R.drawable.image_error)
+                .placeholder(R.drawable.loading_image)
                 .into(ivImageEvent) // imageView mana yang akan diterapkan
+
+            // Loading image
+            // https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40lisadziuba%2Feverything-you-need-to-know-about-loading-animations-10db7f9b61e&psig=AOvVaw1hr4PHxl90GaP8VxUSHtTA&ust=1756362505007000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjYofeqrqqPAxX1bmwGHXmiKowQjhx6BAgAEBo
         }
         holder.itemView.setOnClickListener {
             val i = Intent(
