@@ -62,14 +62,45 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="12dp"
             tools:listitem="@layout/item_list_finished_events"
-            tools:itemCount="2"/>
+            tools:itemCount="2"
+            android:visibility="visible"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/smUpcomingEvents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rvUpcomingEvents"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    layout="@layout/sm_gambar_detail_event"/>
+                <include
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    layout="@layout/sm_gambar_detail_event"/>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <TextView
             android:id="@+id/tvTitleFinishedEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rvUpcomingEvents"
+            app:layout_constraintTop_toBottomOf="@id/smUpcomingEvents"
             android:layout_marginTop="18dp"
             android:text="@string/finished_events"
             style="@style/TextBold.TextNormal"/>
@@ -83,7 +114,7 @@
             android:layout_marginTop="12dp"
             tools:listitem="@layout/item_list_finished_events"
             tools:itemCount="2"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/smFinishedEvents"
@@ -92,7 +123,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvTitleFinishedEvents"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="12dp"
-            android:visibility="visible">
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
