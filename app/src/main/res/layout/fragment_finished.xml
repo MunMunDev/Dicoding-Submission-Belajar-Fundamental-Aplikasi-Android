@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@id/topAppBar"
         android:layout_marginTop="18dp"
         android:layout_marginStart="14dp"
-        android:text="@string/upcoming_events"
+        android:text="@string/finished_events"
         style="@style/TextBold.TextNormal"/>
 
     <androidx.recyclerview.widget.RecyclerView
