@@ -36,7 +36,7 @@ class UpcomingEventsAdapter(
             Glide.with(holder.itemView)
                 .load(data.imageLogo) // URL Gambar
                 .error(R.drawable.image_error)
-                .placeholder(R.drawable.loading_image)
+                .placeholder(R.drawable.loading)
                 .into(ivImageEvent) // imageView mana yang akan diterapkan
 
             // Loading image

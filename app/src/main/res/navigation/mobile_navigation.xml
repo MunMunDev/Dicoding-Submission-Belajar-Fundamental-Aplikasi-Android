@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/navigation_finished"
-        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.notifications.FinishedFragment"
+        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.finished.FinishedFragment"
         android:label="@string/title_finished"
         tools:layout="@layout/fragment_finished" >
         <action
