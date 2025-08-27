@@ -4,19 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.notifications.FinishedFragment">
+    tools:context=".ui.fragment.upcoming.UpcomingFragment">
+
+    <include
+        android:id="@+id/topAppBar"
+        layout="@layout/appbar_search_bar"/>
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/tvTitleUpcomingEvents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="14dp"
+        android:text="@string/upcoming_events"
+        style="@style/TextBold.TextNormal"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvUpcomingEvents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleUpcomingEvents"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        tools:listitem="@layout/item_list_finished_events"
+        tools:itemCount="2"
+        android:visibility="gone"/>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/smUpcomingEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleUpcomingEvents"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include layout="@layout/sm_item_list_finished_events"/>
+            <include layout="@layout/sm_item_list_finished_events"/>
+            <include layout="@layout/sm_item_list_finished_events"/>
+            <include layout="@layout/sm_item_list_finished_events"/>
+            <include layout="@layout/sm_item_list_finished_events"/>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

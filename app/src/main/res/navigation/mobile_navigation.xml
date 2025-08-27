@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_upcoming"
-        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.dashboard.UpcomingFragment"
+        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.upcoming.UpcomingFragment"
         android:label="@string/title_upcoming"
         tools:layout="@layout/fragment_finished" >
         <action

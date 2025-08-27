@@ -1,5 +1,6 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.adapter
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,11 +11,29 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.activity.detail_event.DetailEventActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.DateAndTime
 import com.bumptech.glide.Glide
+import java.util.Locale
 
 class EventsFinishedAdapter(
     private val listEvents : List<ListEventsModel>,
     private val home: Boolean
 ): RecyclerView.Adapter<EventsFinishedAdapter.ViewHolder>() {
+
+    private var tempEvents = listEvents
+
+    @SuppressLint("NotifyDataSetChanged", "DefaultLocale")
+    fun searchData(kata: String){
+        val vKata = kata.lowercase(Locale.getDefault()).trim()
+        val data = listEvents.filter {
+            (
+                it.name!!.lowercase().trim().contains(vKata)
+                or
+                it.ownerName!!.lowercase().trim().contains(vKata)
+            )
+        }
+        tempEvents = data
+        notifyDataSetChanged()
+    }
+
     private val dateAndTime = DateAndTime()
     class ViewHolder(
         val binding: ItemListFinishedEventsBinding
@@ -27,11 +46,11 @@ class EventsFinishedAdapter(
     }
 
     override fun getItemCount(): Int {
-        return if(home) 5 else listEvents.size
+        return if(home && tempEvents.size>=5) 5 else tempEvents.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data = listEvents[position]
+        val data = tempEvents[position]
         holder.binding.apply {
             tvNameEvent.text = data.name
             tvDescription.text = data.summary

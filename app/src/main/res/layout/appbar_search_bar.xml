@@ -14,7 +14,7 @@
         android:layout_gravity="center_vertical">
 
         <LinearLayout
-            android:id="@+id/llSearchPelatihan"
+            android:id="@+id/llSearchProduk"
             android:layout_width="0dp"
             android:layout_height="40dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -37,14 +37,22 @@
                 android:elevation="20dp"
                 tools:ignore="HardcodedText" />
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="4dp"
-                android:text="Cari Tema, Pelatihan"
+                android:layout_marginEnd="12dp"
+                android:autofillHints="name"
+                android:hint="Cari Judul, Ataupun Penyelenggara"
+                android:textColorHint="@color/white"
                 android:textSize="14sp"
-                android:textColor="@color/white" />
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:background="@color/colorBackgroundTransparent"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
