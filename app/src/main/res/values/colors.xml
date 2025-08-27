@@ -23,4 +23,5 @@
     <color name="backgroundTransparent">#B3000000</color>
     <color name="textJudulTransparent">#FFFFFF</color>
     <color name="textPenulisTransparent">#DCDCDC</color>
+    <color name="colorBackgroundSearch">#66DADADA</color>
 </resources>
