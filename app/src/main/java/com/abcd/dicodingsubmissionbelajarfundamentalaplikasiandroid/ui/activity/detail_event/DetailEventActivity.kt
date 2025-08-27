@@ -35,13 +35,7 @@ class DetailEventActivity : AppCompatActivity() {
             event?.link?.let { link ->
                 val uri = link.toUri()
                 val intent = Intent(Intent.ACTION_VIEW, uri)
-
-                // Cek apakah ada aplikasi yang bisa handle Intent ini
-                if (intent.resolveActivity(packageManager) != null) {
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this, "Tidak ada aplikasi untuk membuka link", Toast.LENGTH_SHORT).show()
-                }
+                startActivity(intent)
             }
         }
     }
@@ -73,6 +67,7 @@ class DetailEventActivity : AppCompatActivity() {
                 val summaryEvent = summary
                 val ownerNameEvent = ownerName
                 val quotaEvent = quota
+                val registrantsEvent = registrants
                 val cityNameEvent = cityName
                 val categoryEvent = category
                 val descriptionEvent = description
@@ -81,7 +76,7 @@ class DetailEventActivity : AppCompatActivity() {
                     tvNameEvent.text = nameEvent
                     tvSummary.text = summaryEvent
                     tvPenyelenggaraEvent.text = ownerNameEvent
-                    tvKuota.text = quotaEvent
+                    tvKuota.text = "$quotaEvent-$registrantsEvent"
                     tvPelaksanaan.text = tglMulaiPelaksanaan
                     tvLokasi.text = cityNameEvent
                     tvKategori.text = categoryEvent
