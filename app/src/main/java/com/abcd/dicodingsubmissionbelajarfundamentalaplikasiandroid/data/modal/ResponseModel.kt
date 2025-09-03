@@ -44,10 +44,10 @@ data class ListEventsModel (
     var cityName: String? = null,
 
     @SerializedName("quota")
-    var quota: String? = null,
+    var quota: Int = 0,
 
     @SerializedName("registrants")
-    var registrants: String? = null,
+    var registrants: Int = 0,
 
     @SerializedName("beginTime")
     var beginTime: String? = null,
@@ -69,12 +69,13 @@ data class ListEventsModel (
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
-        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as Int,
+        parcel.readValue(Int::class.java.classLoader) as Int,
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
-    )
+    ) {
+    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
@@ -86,8 +87,8 @@ data class ListEventsModel (
         parcel.writeString(category)
         parcel.writeString(ownerName)
         parcel.writeString(cityName)
-        parcel.writeString(quota)
-        parcel.writeString(registrants)
+        parcel.writeValue(quota)
+        parcel.writeValue(registrants)
         parcel.writeString(beginTime)
         parcel.writeString(endTime)
         parcel.writeString(link)

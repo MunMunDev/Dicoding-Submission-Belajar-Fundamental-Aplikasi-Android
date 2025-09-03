@@ -66,8 +66,7 @@ class DetailEventActivity : AppCompatActivity() {
                 val nameEvent = name
                 val summaryEvent = summary
                 val ownerNameEvent = ownerName
-                val quotaEvent = quota
-                val registrantsEvent = registrants
+                val quotaEvent = quota-registrants
                 val cityNameEvent = cityName
                 val categoryEvent = category
                 val descriptionEvent = description
@@ -76,7 +75,7 @@ class DetailEventActivity : AppCompatActivity() {
                     tvNameEvent.text = nameEvent
                     tvSummary.text = summaryEvent
                     tvPenyelenggaraEvent.text = ownerNameEvent
-                    tvKuota.text = "$quotaEvent-$registrantsEvent"
+                    tvKuota.text = "$quotaEvent"
                     tvPelaksanaan.text = tglMulaiPelaksanaan
                     tvLokasi.text = cityNameEvent
                     tvKategori.text = categoryEvent
