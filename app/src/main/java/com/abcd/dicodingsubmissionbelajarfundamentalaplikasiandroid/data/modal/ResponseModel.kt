@@ -20,7 +20,7 @@ data class ResponseModel(
 
 @Entity(tableName = "events")
 data class ListEventsModel (
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     @SerializedName("id")
     @ColumnInfo(name = "id")
     var id: Int? = null,
