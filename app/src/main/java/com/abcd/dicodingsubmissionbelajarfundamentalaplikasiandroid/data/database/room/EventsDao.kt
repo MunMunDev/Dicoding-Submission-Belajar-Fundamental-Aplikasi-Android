@@ -1,6 +1,5 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.database.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -11,6 +10,9 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.L
 
 @Dao
 interface EventsDao {
+    @Query("SELECT * from events ORDER BY id ASC")
+    fun getAllEvents(): List<ListEventsModel>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(events: ListEventsModel)
 
@@ -19,7 +21,4 @@ interface EventsDao {
 
     @Delete
     fun delete(events: ListEventsModel)
-
-    @Query("SELECT * from events ORDER BY id ASC")
-    fun getAllEvents(): LiveData<List<ListEventsModel>>
 }

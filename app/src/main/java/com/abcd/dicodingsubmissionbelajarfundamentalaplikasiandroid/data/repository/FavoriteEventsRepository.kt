@@ -1,7 +1,6 @@
 package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.repository
 
 import android.app.Application
-import androidx.lifecycle.LiveData
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.database.room.EventsDao
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.database.room.EventsRoomDatabase
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
@@ -21,6 +20,12 @@ class FavoriteEventsRepository @Inject constructor(
         val db = EventsRoomDatabase.getDatabase(application)
         mEventsDao = db.eventsDao()
     }
-    fun getAllEventss(): LiveData<List<ListEventsModel>> = mEventsDao.getAllEvents()
+    fun getAllEvents(): List<ListEventsModel> = mEventsDao.getAllEvents()
+
+    fun insert(event: ListEventsModel) = executorService.execute { mEventsDao.insert(event) }
+
+    fun delete(event: ListEventsModel) =  executorService.execute { mEventsDao.delete(event) }
+
+    fun update(event: ListEventsModel) = executorService.execute { mEventsDao.update(event) }
 
 }
