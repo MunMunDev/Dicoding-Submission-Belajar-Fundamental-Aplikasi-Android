@@ -11,6 +11,7 @@
     <string name="dicoding_event">Dicoding Event</string>
     <string name="upcoming_events">Upcoming Events</string>
     <string name="finished_events">Finished Events</string>
+    <string name="favorite_events">Favorite Events</string>
     <string name="cari_events">Cari Events</string>
     <string name="events">Events</string>
     <string name="search">Cari Judul, Ataupun Penyelenggara</string>
