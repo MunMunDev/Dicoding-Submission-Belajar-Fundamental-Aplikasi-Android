@@ -2,6 +2,9 @@ package com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 data class ResponseModel(
@@ -15,52 +18,68 @@ data class ResponseModel(
     var listEvents: List<ListEventsModel>? = null,
 )
 
+@Entity(tableName = "events")
 data class ListEventsModel (
+    @PrimaryKey(autoGenerate = true)
     @SerializedName("id")
-    var id: String? = null,
+    @ColumnInfo(name = "id")
+    var id: Int? = null,
 
     @SerializedName("name")
+    @ColumnInfo(name = "name")
     var name: String? = null,
 
     @SerializedName("summary")
+    @ColumnInfo(name = "summary")
     var summary: String? = null,
 
     @SerializedName("description")
+    @ColumnInfo(name = "description")
     var description: String? = null,
 
     @SerializedName("imageLogo")
+    @ColumnInfo(name = "imageLogo")
     var imageLogo: String? = null,
 
     @SerializedName("mediCover")
+    @ColumnInfo(name = "mediCover")
     var mediCover: String? = null,
 
     @SerializedName("category")
+    @ColumnInfo(name = "category")
     var category: String? = null,
 
     @SerializedName("ownerName")
+    @ColumnInfo(name = "ownerName")
     var ownerName: String? = null,
 
     @SerializedName("cityName")
+    @ColumnInfo(name = "cityName")
     var cityName: String? = null,
 
     @SerializedName("quota")
+    @ColumnInfo(name = "quota")
     var quota: Int = 0,
 
     @SerializedName("registrants")
+    @ColumnInfo(name = "registrants")
     var registrants: Int = 0,
 
     @SerializedName("beginTime")
+    @ColumnInfo(name = "beginTime")
     var beginTime: String? = null,
 
     @SerializedName("endTime")
+    @ColumnInfo(name = "endTime")
     var endTime: String? = null,
 
     @SerializedName("link")
+    @ColumnInfo(name = "link")
     var link: String? = null,
 
 ): Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
+        parcel.readValue(Int::class.java.classLoader) as Int,
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -74,11 +93,10 @@ data class ListEventsModel (
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(id)
+        parcel.writeValue(id)
         parcel.writeString(name)
         parcel.writeString(summary)
         parcel.writeString(description)
