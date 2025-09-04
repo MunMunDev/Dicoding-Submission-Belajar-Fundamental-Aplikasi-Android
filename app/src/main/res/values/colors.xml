@@ -25,4 +25,6 @@
     <color name="textPenulisTransparent">#DCDCDC</color>
     <color name="colorBackgroundSearch">#66DADADA</color>
     <color name="colorBackgroundTransparent">#00FFFFFF</color>
+
+    <color name="merah_hati">#800000</color>
 </resources>
