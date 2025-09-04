@@ -5,20 +5,16 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
 
 @Dao
 interface EventsDao {
     @Query("SELECT * from events ORDER BY id ASC")
-    fun getAllEvents(): List<ListEventsModel>
+    suspend fun getAllEvents(): List<ListEventsModel>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(events: ListEventsModel)
-
-    @Update
-    fun update(events: ListEventsModel)
+    suspend fun insert(events: ListEventsModel)
 
     @Delete
-    fun delete(events: ListEventsModel)
+    suspend fun delete(events: ListEventsModel)
 }
