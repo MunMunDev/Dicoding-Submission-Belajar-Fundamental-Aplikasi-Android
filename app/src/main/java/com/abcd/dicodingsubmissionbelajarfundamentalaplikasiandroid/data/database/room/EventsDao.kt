@@ -10,11 +10,14 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.L
 @Dao
 interface EventsDao {
     @Query("SELECT * from events ORDER BY id ASC")
-    suspend fun getAllEvents(): List<ListEventsModel>
+    suspend fun getAllFavoriteEvents(): List<ListEventsModel>
+
+    @Query("SELECT COUNT(*) > 0 FROM events WHERE id = :id")
+    suspend fun searchFavoriteEvents(id: Int): Boolean
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(events: ListEventsModel)
+    suspend fun insert(events: ListEventsModel): Long
 
     @Delete
-    suspend fun delete(events: ListEventsModel)
+    suspend fun delete(events: ListEventsModel): Int
 }

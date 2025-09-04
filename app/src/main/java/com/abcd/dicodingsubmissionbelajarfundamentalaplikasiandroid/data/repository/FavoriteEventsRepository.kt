@@ -17,7 +17,9 @@ class FavoriteEventsRepository @Inject constructor(
         val db = EventsRoomDatabase.getDatabase(application)
         mEventsDao = db.eventsDao()
     }
-    suspend fun getAllEvents(): List<ListEventsModel> = mEventsDao.getAllEvents()
+    suspend fun getAllFavoriteEvents(): List<ListEventsModel> = mEventsDao.getAllFavoriteEvents()
+
+    suspend fun searchFavoriteEvents(id: Int): Boolean = mEventsDao.searchFavoriteEvents(id)
 
     suspend fun insert(event: ListEventsModel) = mEventsDao.insert(event)
 

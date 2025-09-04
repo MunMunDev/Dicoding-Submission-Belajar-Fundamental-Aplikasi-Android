@@ -22,7 +22,7 @@ class FavoriteViewModel @Inject constructor(
         viewModelScope.launch {
             _favoriteEvents.value = UIState.Loading
             try {
-                val data = repository.getAllEvents()
+                val data = repository.getAllFavoriteEvents()
                 _favoriteEvents.value = UIState.Success(data)
             } catch (ex: Exception){
                 _favoriteEvents.value = UIState.Failure("Error: ${ex.message}")

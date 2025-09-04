@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
+import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.R
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.data.modal.ListEventsModel
@@ -12,12 +14,17 @@ import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.databinding.
 import com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.utils.DateAndTime
 import com.bumptech.glide.Glide
 import androidx.core.net.toUri
+import dagger.hilt.android.AndroidEntryPoint
 
 @Suppress("DEPRECATION")
+@AndroidEntryPoint
 class DetailEventActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDetailEventBinding
     private var event: ListEventsModel? = null
     private val dateAndTime = DateAndTime()
+    private val viewModel: CrudFavoriteViewModel by viewModels()
+    private var checkActiveFavorite = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailEventBinding.inflate(layoutInflater)
@@ -26,16 +33,49 @@ class DetailEventActivity : AppCompatActivity() {
         setStartShimmer()
         setToolbar()
         fetchPreviousData()
+        isFavorite()
+        insertFavoriteEvent()
+        deleteFavoriteEvent()
         setButton()
     }
 
     @SuppressLint("QueryPermissionsNeeded")
     private fun setButton() {
-        binding.btnRegister.setOnClickListener {
-            event?.link?.let { link ->
-                val uri = link.toUri()
-                val intent = Intent(Intent.ACTION_VIEW, uri)
-                startActivity(intent)
+        binding.apply {
+            btnRegister.setOnClickListener {
+                event?.link?.let { link ->
+                    val uri = link.toUri()
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    startActivity(intent)
+                }
+            }
+
+            btnFavorite.setOnClickListener {
+                event?.let { mEvent ->
+                    if(!checkActiveFavorite)
+                        viewModel.insertFavoriteEvents(mEvent)
+                    else
+                        viewModel.deleteFavoriteEvents(mEvent)
+                }
+            }
+        }
+    }
+
+    private fun insertFavoriteEvent(){
+        viewModel.insertFavorite.observe(this@DetailEventActivity){result->
+            Log.d("DetailTAG", "insertFavoriteEvent: $result")
+            if(result != -1L){
+                setFavoriteActivate()
+                checkActiveFavorite = true
+            }
+        }
+    }
+
+    private fun deleteFavoriteEvent(){
+        viewModel.deleteFavorite.observe(this@DetailEventActivity){result->
+            if(result == 1){
+                setFavoriteDeactivate()
+                checkActiveFavorite = false
             }
         }
     }
@@ -44,8 +84,33 @@ class DetailEventActivity : AppCompatActivity() {
         val i = intent
         if(i != null){
             event = i.getParcelableExtra("list_event")
+            event?.id?.let { nId ->
+                viewModel.searchEventsFavorite(nId)
+            }
             setDataEvent(event)
         }
+    }
+
+    private fun isFavorite() {
+        viewModel.isFavorite.observe(this@DetailEventActivity){result->
+            binding.apply {
+                checkActiveFavorite = result
+                Log.d("DetailTAG", "isFavorite: $result")
+
+                if(result)
+                    setFavoriteActivate()
+                else
+                    setFavoriteDeactivate()
+            }
+        }
+    }
+
+    private fun setFavoriteActivate(){
+        binding.btnFavorite.setImageResource(R.drawable.baseline_favorite_24_active)
+    }
+
+    private fun setFavoriteDeactivate(){
+        binding.btnFavorite.setImageResource(R.drawable.baseline_favorite_border_24)
     }
 
     private fun setToolbar(){
