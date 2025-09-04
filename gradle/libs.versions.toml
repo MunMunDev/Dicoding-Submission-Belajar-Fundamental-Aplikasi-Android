@@ -20,17 +20,20 @@ lifecycleViewmodelKtx = "2.9.2"
 navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 okhttp = "5.0.0-alpha.3"
+preference = "1.1.1"
 retrofit = "2.9.0"
 roomRuntime = "2.7.2"
 roomCompiler = "2.7.2"
 shimmer = "0.5.0"
 activity = "1.10.1"
-ksp = "2.0.21-1.0.25" # versi KSP menyesuaikan Kotlin
+ksp = "2.0.21-1.0.25"
+legacySupportV4 = "1.0.0" # versi KSP menyesuaikan Kotlin
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-preference = { module = "androidx.preference:preference", version.ref = "preference" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
@@ -54,6 +57,7 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 retrofit2-converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
