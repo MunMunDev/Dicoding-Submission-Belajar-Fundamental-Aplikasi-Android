@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_upcoming">Upcoming</string>
     <string name="title_finished">Finished</string>
+    <string name="title_favorite">Favorite</string>
     <string name="image">Image</string>
     <string name="title">Contoh Title</string>
     <string name="description">Contoh Deskripsi Yang Panjang dan Bisa Digunakan 2 lines</string>
@@ -10,6 +11,7 @@
     <string name="dicoding_event">Dicoding Event</string>
     <string name="upcoming_events">Upcoming Events</string>
     <string name="finished_events">Finished Events</string>
+    <string name="favorite_events">Favorite Events</string>
     <string name="cari_events">Cari Events</string>
     <string name="events">Events</string>
     <string name="search">Cari Judul, Ataupun Penyelenggara</string>
@@ -64,4 +66,5 @@
     <string name="kategori">Kategori :</string>
     <string name="deskripsi_event">Deskripsi Event</string>
     <string name="register">Register</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
