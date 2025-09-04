@@ -68,4 +68,23 @@
             android:id="@+id/action_navigation_favorite_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.abcd.dicodingsubmissionbelajarfundamentalaplikasiandroid.ui.fragment.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_finished"
+            app:destination="@id/navigation_finished" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_upcoming"
+            app:destination="@id/navigation_upcoming" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_favorite"
+            app:destination="@id/navigation_favorite" />
+    </fragment>
 </navigation>
