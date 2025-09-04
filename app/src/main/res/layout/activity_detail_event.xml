@@ -22,15 +22,14 @@
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toTopOf="@id/llButton">
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/ivGambarEvent"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                app:layout_constraintTop_toTopOf="parent"
                 android:contentDescription="@string/image"
                 android:src="@drawable/image_error"
                 android:scaleType="fitXY"
@@ -41,22 +40,34 @@
                 android:id="@+id/smImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ivGambarEvent"
                 android:visibility="visible">
                 <include layout="@layout/sm_gambar_detail_event"/>
             </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <ImageView
+                android:id="@+id/btnFavorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintTop_toBottomOf="@id/smImage"
+                app:layout_constraintBottom_toBottomOf="@id/smImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="24dp"
+                android:contentDescription="@string/image"
+                android:src="@drawable/baseline_favorite_border_24"
+                android:background="@drawable/bg_bulat"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clPenjelasan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/ivGambarEvent"
+                app:layout_constraintTop_toBottomOf="@id/smImage"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="12dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/bg_card"
-                android:visibility="visible">
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="gone">
                 <TextView
                     android:id="@+id/tvNameEvent"
                     android:layout_width="match_parent"
@@ -246,11 +257,11 @@
                 android:id="@+id/smPenjelasan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/clPenjelasan"
                 android:visibility="visible">
                 <include layout="@layout/sm_detail_event"/>
             </com.facebook.shimmer.ShimmerFrameLayout>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <LinearLayout
