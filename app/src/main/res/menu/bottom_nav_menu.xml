@@ -18,7 +18,12 @@
 
     <item
         android:id="@+id/navigation_favorite"
-        android:icon="@drawable/baseline_favorite_border_24"
+        android:icon="@drawable/baseline_favorite_24_active"
         android:title="@string/title_favorite" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/baseline_settings_applications_24"
+        android:title="@string/title_settings" />
 
 </menu>

@@ -74,9 +74,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="@string/nama_event"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextTitle"/>
 
                 <TextView
                     android:id="@+id/tvSummary"
@@ -87,9 +85,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="8dp"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
+                    style="@style/TextBold.TextNormal"
                     android:lineSpacingExtra="4dp" />
 
                 <TextView
@@ -100,9 +96,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="8dp"
                     android:text="@string/penyelenggara"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvPenyelenggaraEvent"
@@ -112,9 +106,7 @@
                     app:layout_constraintStart_toEndOf="@id/tvTitlePenyelenggaraEvent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvTitleKuota"
@@ -124,9 +116,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="8dp"
                     android:text="@string/kuota"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvKuota"
@@ -136,9 +126,7 @@
                     app:layout_constraintStart_toEndOf="@id/tvTitleKuota"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvTitlePelaksanaan"
@@ -148,9 +136,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="4dp"
                     android:text="@string/pelaksanaan"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvPelaksanaan"
@@ -160,9 +146,7 @@
                     app:layout_constraintStart_toEndOf="@id/tvTitlePelaksanaan"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvTitleLokasi"
@@ -172,9 +156,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="4dp"
                     android:text="@string/lokasi"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvLokasi"
@@ -184,9 +166,7 @@
                     app:layout_constraintStart_toEndOf="@id/tvTitleLokasi"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
+                    style="@style/TextBold.TextNormal"
                     android:lineSpacingExtra="4dp"/>
 
                 <TextView
@@ -197,9 +177,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="4dp"
                     android:text="@string/kategori"
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextNormal" />
 
                 <TextView
                     android:id="@+id/tvKategori"
@@ -209,9 +187,7 @@
                     app:layout_constraintStart_toEndOf="@id/tvTitleKategori"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:text=""
-                    android:textColor="@color/textColorBlack"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
+                    style="@style/TextBold.TextNormal"
                     android:lineSpacingExtra="4dp"/>
 
                 <TextView
@@ -223,9 +199,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="12dp"
                     android:text="@string/deskripsi_event"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    style="@style/TextBold.TextTitle"/>
 
                 <TextView
                     android:id="@+id/tvDeskripsi"
@@ -236,9 +210,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginTop="4dp"
                     android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="normal"
+                    style="@style/TextBold.TextNormal"
                     android:lineSpacingExtra="4dp" />
 
                 <WebView
