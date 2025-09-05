@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid"
+        parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -12,7 +13,77 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/backgroundDarkMode</item>
+
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+        <item name="android:textColorPrimary">@color/textDarkModeDescription</item>
     </style>
+
+    <!-- Dark mode background -->
+    <style name="BackgroundMode">
+        <item name="backgroundColor">@color/white</item>
+    </style>
+
+    <style name="TextNormal">
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="TextBold">
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="TextNormal.TextVerySmall" parent="TextNormal">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextNormal.TextSmall" parent="TextNormal">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextNormal.TextNormal" parent="TextNormal">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextNormal.TextHeader" parent="TextNormal">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextBold.TextNormal" parent="TextBold">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextBold.TextTitle" parent="TextBold">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextBold.TextHeader" parent="TextBold">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Abu abu -->
+    <style name="TextNormal.TextNormal.TextGrey" parent="TextNormal.TextNormal">
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+    </style>
+
+    <style name="TextNormal.TextSmall.TextGrey" parent="TextNormal.TextSmall">
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+    </style>
+
+    <!-- Shimmer -->
+    <style name="TextNormal.TextNormal.TextShimmer" parent="TextNormal.TextNormal">
+        <item name="android:textColor">@color/textDarkModeDescription</item>
+    </style>
+
+    <style name="TextNormal.TextSmall.TextShimmer" parent="TextNormal.TextSmall">
+        <item name="android:textColor">@color/textDarkModeDescription</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="Base.Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->

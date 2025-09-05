@@ -15,10 +15,24 @@
 
     <color name="primaryColor">#0063CB</color>
     <color name="secondaryColor">#5DA6D3</color>
+    <color name="primaryColorDark">#083B7A</color>
 
     <color name="textSnowDrift">#F8FBF8</color>
     <color name="textColorWhite">#FAF5EF</color>
     <color name="textColorBlack">#1A1A1A</color>
+
+    <!-- Text dark mode -->
+    <color name="textDarkModeTitle">#FFFFFF</color>        <!-- Title -->
+    <color name="textDarkModeDescription">#B0B0B0</color> <!-- Deskripsi -->
+    <color name="textDarkModeEtc">#9E9E9E</color>         <!-- Subtitle/hint -->
+    <color name="textDarkModeShimmer">#757575</color>     <!-- Shimmer -->
+
+    <!-- Background dark mode -->
+    <color name="backgroundDarkMode">#1E1E1E</color>        <!-- Title -->
+
+    <color name="dark_background">#121212</color>         <!-- Background utama -->
+    <color name="dark_surface">#1E1E1E</color>            <!-- Card/item background -->
+
 
     <color name="backgroundTransparent">#B3000000</color>
     <color name="textJudulTransparent">#FFFFFF</color>

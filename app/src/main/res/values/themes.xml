@@ -2,21 +2,32 @@
     <!-- Base application theme. -->
     <style name="Theme.DicodingSubmissionBelajarFundamentalAplikasiAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimary">@color/purple_200</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondaryColor</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/black</item>
 
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:itemBackground">@color/white</item>
-        <item name="android:textColor">@color/textColorBlack</item>
-        <item name="android:textColorPrimary">@color/textColorBlack</item>
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:itemBackground">@color/dark_surface</item>
+
+        <!-- Text colors -->
+        <item name="android:textColor">@color/textDarkModeTitle</item>
+        <item name="android:textColorPrimary">@color/textDarkModeDescription</item>
+        <item name="android:textColorSecondary">@color/textDarkModeEtc</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Light mode background -->
+    <style name="BackgroundMode">
+        <item name="backgroundColor">@color/primaryColor</item>
     </style>
 
     <style name="TextNormal">
