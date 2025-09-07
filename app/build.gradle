@@ -89,6 +89,10 @@ dependencies {
 
     // Preferences
     implementation libs.androidx.preference
+
+    // Work Manager
+    implementation(libs.androidx.work.runtime)
+    implementation(libs.android.async.http)
 }
 
 kapt {

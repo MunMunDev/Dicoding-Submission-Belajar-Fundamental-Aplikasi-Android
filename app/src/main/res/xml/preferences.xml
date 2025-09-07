@@ -6,14 +6,14 @@
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="@string/key_theme"
-        android:title="@string/key_theme"
+        android:title="@string/title_theme"
         android:summary="@string/summary_theme"
         app:iconSpaceReserved="false" />
 
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="@string/key_reminder"
-        android:title="@string/key_reminder"
+        android:title="@string/title_reminder"
         android:summary="@string/summary_reminder"
         app:iconSpaceReserved="false" />
 
